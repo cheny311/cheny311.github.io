@@ -4,11 +4,11 @@
 			"path": "."
 		},
 		{
-			"path": "../../../Desktop/img"
+			"path": "../../../Desktop/cheny311/face-filter/img"
 		}
 	],
 	"settings": {
 		"liveServer.settings.port": 5501,
-		"liveServer.settings.multiRootWorkspaceName": "face filter"
+		"liveServer.settings.multiRootWorkspaceName": "face-filter"
 	}
 }
