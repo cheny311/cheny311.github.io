@@ -237,7 +237,13 @@ position: relative;
 }
 
 .toe1 {
-  transform: translate(0,10px);
+  transform: translate(-10px,55px);
+  width: 10vw;
+  height: 15vw;
+}
+
+.text {
+  z-index:10;
 }
 
 .text1 {
@@ -257,6 +263,27 @@ text-align: center;
 }
 
 .bubble1:hover ~ .text1{
+  opacity: 1;
+}
+.toe2 {
+  transform: translate(0,-20px);
+}
+.text2 {
+  position: absolute;
+  text-align: center;
+   opacity: 0;
+   cursor: pointer;
+  }
+.bubble2 {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: cyan;
+}
+
+.bubble2:hover ~ .text2{
   opacity: 1;
 }
 /* third section */
