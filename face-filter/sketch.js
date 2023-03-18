@@ -34,9 +34,7 @@ function preload(){
 
 
 function setup() {
-    // load p5 functions:
-    
-
+   
     createCanvas(windowWidth, windowHeight);
     
     capture = createCapture(VIDEO);
@@ -56,23 +54,21 @@ function setup() {
   }
 
 function draw() {
-  tint(255, 127);
-  image(capture,0, 0, width, height); // 绘制翻转后的视频帧
-  image(img[currentImage], 0, 0, windowWidth, windowHeight);
-//   push(); // 保存当前的坐标系统状态
-//   translate(width, 0); // 将坐标系移到画布右上角
-//   scale(-1, 1); // 水平翻转坐标系
-//   image(capture,0, 0, width, height); // 绘制翻转后的视频帧
-//   pop(); // 恢复之前保存的坐标系统状态
-//   // push()
-//   // tint(255, 127);
+  
+  tint(255, 127);//half opacity
+  push(); 
+    translate(width, 0); 
+    scale(-1, 1); //mirror camera
+    image(capture,0, 0, width, height); // draw camera
+  pop(); 
+  for (let i = 0; i < img.length; i++) {
+    image(img[currentImage],0,0,windowWidth,windowHeight);
+  }
+ // image(img[currentImage], 0, 0, windowWidth, windowHeight);
+
 //   // // image(img44,0,0,windowWidth,windowHeight)
   
-//   // pop()
-//   // push();
-//   // tint(255, 127); // Display at half opacity
-// image(img(currentImage),windowWidth,windowHeight);
-// // pop();
+
 //   //image(img33,0,0,windowWidth,windowHeight)
  
 //   // if (img) {
@@ -150,9 +146,9 @@ function keyPressed() {
   if (keyCode === ENTER) {
     currentImage++;
     console.log("i am here");
-    // if (currentImage >= img.length) {
-    //   currentImage = 0;
-    //  }
+    if (currentImage >= img.length) {
+      currentImage = 0;
+     }
 
   }
 }
