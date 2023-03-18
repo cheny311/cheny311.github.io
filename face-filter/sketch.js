@@ -6,6 +6,7 @@
 let capture;
 let tracker;
 let positions;
+
 let words= ["伱不湜我，所姒伱鈈会眀白伱對莪の薏図。", " ぺ畱ぅ很９的頭發能ゐ尒説剪就剪，愛ぅ很９的尒也能説忘就忘。◇",  "離開辷個折磨妳感情啲亽，始終者β是對啲", "涐冇密集恐惧症，不能接近心眼囝多の亽", "ㄩ總有⒈個人要贏的，那個亽為什么不能是我", "朩要過分善良，畢竟有些亽，真的挺朩是亽的", "涐 们 旳 丗 届 、 能 ド 能 永 远 阳 光 灿 烂", "事實証明感情是岢y被慢慢淡掉的哪有那庅多⒈輩子的事", "“自尊、？自爱、？我把一切都丢弃,我变成了最肮脏的东西",  "★゜ 尒 詠 逺 Sんī 硪 德 蕞 嗳，⑧ 菅 āì 妳 侑 哆 難，莪 啲 惢 芷 想 屬 於 伱。︶ㄣ", "╰+當亱募降臨dㄖ寸鯸孤韣禾ó寂寞湧仩訫頭。メo", "〆丗事本就惡俗ъú堪能忼嘅凢f能諒幾亼",  "①直佷紾惜恠①起のㄖ孒.", "吢 早已蒾矢 · 煙の稥菋... 彌漫", "涐只是一个罘起眼旳尕㈢", "&涐想.沵德>芯里只裝著涐﹌﹋", "偸偸 旳 想念 沵旳 ﹁切.勼足夠 る.!!", "莪哭ㄋ，眼淚變成ㄋ廉價的祈求", "吢恠痛.涙恠蓅.噌俓の所冇苡卟恠擁冇",];
 
 let currentWordIndex=0
@@ -17,6 +18,7 @@ let img = [];
 
 var img11,img22,img33,img44,img55
 var fish,beibei
+
 function preload(){
   
     img11=loadImage("img11.png");
@@ -138,6 +140,7 @@ function keyPressed() {
   if (keyCode === ENTER) {
     currentImage++;
     console.log("i am here");
+    //clear();
     // if (currentImage >= img.length) {
     //   currentImage = 0;
     //  }
@@ -150,7 +153,7 @@ function keyPressed() {
     currentWordIndex = (currentWordIndex + 1) % words.length;
     clear();
     // textSize(180)
-    
+   // console.log("hi");
     text(words[currentWordIndex], 180,200);
    
   }
