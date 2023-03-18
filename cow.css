@@ -1,12 +1,22 @@
+body{
+    background-image: url("face-filter/img/bg0.png");
+    background-size:cover;
+    
+}
 .carousel-container {
     position: relative;
     background: green;
-    height: 500px;
-    width: 500px;
-    margin: 20px auto;
+    height: 60vw;
+    width: 60vw;
+   
     overflow: hidden;
-  }
-  
+   
+    margin-top: 55px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
   .carousel-container input {
     display: none;
   }
