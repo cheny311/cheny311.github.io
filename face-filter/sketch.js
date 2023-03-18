@@ -21,7 +21,6 @@ function preload(){
   
     img11=loadImage("img11.png");
     img22=loadImage("img22.png");
-    //img33=loadImage("img33.png")
     img44=loadImage("beibei.png");
     img55=loadImage("fish.png");
 
@@ -55,86 +54,79 @@ function setup() {
 
 function draw() {
   
-  tint(255, 127);//half opacity
+
   push(); 
     translate(width, 0); 
     scale(-1, 1); //mirror camera
     image(capture,0, 0, width, height); // draw camera
   pop(); 
+ 
+  push();
+  tint(255, 127);//half opacity
   for (let i = 0; i < img.length; i++) {
     image(img[currentImage],0,0,windowWidth,windowHeight);
   }
- // image(img[currentImage], 0, 0, windowWidth, windowHeight);
-
-//   // // image(img44,0,0,windowWidth,windowHeight)
-  
-
-//   //image(img33,0,0,windowWidth,windowHeight)
- 
-//   // if (img) {
-//   //   image(img, 0, 0, windowWidth, windowHeight)
-//   // }
-
-//     let positions = tracker.getCurrentPosition(); // updates the tracker with current positions
+pop();
+// push();
+// tint(255, 127);//half opacity
+// //image(img44,0,0,windowWidth,windowHeight)
+// //image(img33,0,0,windowWidth,windowHeight)
+//  pop();
+let positions = tracker.getCurrentPosition(); // updates the tracker with current positions
 // //     console.log(positions); // uncomment to see the list of arrays
   
 // //     // draw face outline
-// push(); // 保存当前的坐标系统状态
-//   translate(width, 0); // 将坐标系移到画布右上角
-//   scale(-1, 1); // 水平翻转坐标系
+push(); // 保存当前的坐标系统状态
+  translate(width, 0); //mirror back
+  scale(-1, 1); 
+    noFill();
+    stroke(255);
+if (positions.length > 0) {
+    fill(255, 0, 0);
+    rect(positions[19][0], positions[19][1], 90, 20);
+  }
  
-  
-//     noFill();
-//     stroke(255);
-  
-
-
-// // if (positions.length > 0) {
-// //     fill(255, 0, 0);
-// //     rect(positions[19][0], positions[19][1], 90, 20);
-// //   }
- 
-  
-  
-//   if (positions.length>0){
-//     image(img11,positions[23][0],positions[23][1],100,100);
-//     image(img22,positions[70][0],positions[70][1],100,100)
-//   }
-//   pop(); // 恢复之前保存的坐标系统状态
+  if (positions.length>0){
+    image(img11,positions[23][0],positions[23][1],100,100);
+    image(img22,positions[70][0],positions[70][1],100,100)
+  }
+  pop(); // 恢复之前保存的坐标系统状态
 //   // image(images[currentImage], 0, 0, windowWidth, windowHeight);
-//   textSize(90)
-//   textStyle(BOLD)
-//   let green = color('#3FFF00');
-//   fill(green);
-//     text(words[currentWordIndex],88,180)
-//     push()
-//     loadPixels();
-//     for (let x = 0; x < width; x++) {
-//       for (let y = 0; y < height; y++) {
-//         let index = (x + y * width) * 4;
-//         let r = pixels[index];
-//         let g = pixels[index + 1];
-//         let b = pixels[index + 2];
-//         let a = pixels[index + 3];
-//         pixels[index] = (r + g + b) / 3;
-//         pixels[index + 1] = (r + g + b) / 3;
-//         pixels[index + 2] = (r + g + b) / 3;
-//       }
-//     }
-//     updatePixels();
+push();
+  textSize(90)
+  textStyle(BOLD)
+  let green = color('#3FFF00');
+  fill(green);
+    text(words[currentWordIndex],88,180);
+    pop();
+    push()
+    loadPixels();
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        let index = (x + y * width) * 4;
+        let r = pixels[index];
+        let g = pixels[index + 1];
+        let b = pixels[index + 2];
+        let a = pixels[index + 3];
+        pixels[index] = (r + g + b) / 3;
+        pixels[index + 1] = (r + g + b) / 3;
+        pixels[index + 2] = (r + g + b) / 3;
+      }
+    }
+    updatePixels();
     
-//     // Apply blur to the text
-//     blur(1);
-//     textSize(90)
-//   let black = color('#1C2619');
-//   fill(black);
-//   tint(255, 127);
-//     text(words[currentWordIndex],92,180)
-//     pop()  
-//     if (positions.length>0){
-//       image(img55,positions[11][0],positions[1][1],220,220);
+    // Apply blur to the text
+    blur(1);
+    textSize(90)
+  let black = color('#1C2619');
+  fill(black);
+  tint(255, 127);
+    text(words[currentWordIndex],92,180)
+    pop()  
+    if (positions.length>0){
+      image(img55,positions[11][0],positions[1][1],220,220);
       
-    // } 
+    } 
 }
 
 
@@ -146,9 +138,9 @@ function keyPressed() {
   if (keyCode === ENTER) {
     currentImage++;
     console.log("i am here");
-    if (currentImage >= img.length) {
-      currentImage = 0;
-     }
+    // if (currentImage >= img.length) {
+    //   currentImage = 0;
+    //  }
 
   }
 }
