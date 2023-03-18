@@ -243,14 +243,17 @@ position: relative;
 }
 
 .text {
+  width: 100%;
   z-index:10;
+  top: 30%;
+  cursor: pointer;
 }
 
 .text1 {
 position: absolute;
 text-align: center;
  opacity: 0;
- cursor: pointer;
+
 }
 
 .bubble1 {
@@ -265,6 +268,11 @@ text-align: center;
 .bubble1:hover ~ .text1{
   opacity: 1;
 }
+
+.text1:hover .text1{
+  opacity: 1;
+}
+
 .toe2 {
   transform: translate(0,-20px);
 }
@@ -286,6 +294,95 @@ text-align: center;
 .bubble2:hover ~ .text2{
   opacity: 1;
 }
+.toe3 {
+  transform: translate(-10px,55px);
+  width: 10vw;
+  height: 15vw;
+}
+
+.text3 {
+position: absolute;
+text-align: center;
+ opacity: 0;
+
+}
+
+.bubble3 {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: cyan;
+}
+
+.bubble3:hover ~ .text3{
+  opacity: 1;
+}
+
+.text3:hover .text3{
+  opacity: 1;
+}
+.toe4 {
+  transform: translate(-10px,55px);
+  width: 10vw;
+  height: 15vw;
+}
+
+.text4 {
+position: absolute;
+text-align: center;
+ opacity: 0;
+
+}
+
+.bubble4 {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: cyan;
+}
+
+.bubble4:hover ~ .text4{
+  opacity: 1;
+}
+
+.text4:hover .text4{
+  opacity: 1;
+}
+.toe5 {
+  transform: translate(-10px,55px);
+  width: 10vw;
+  height: 15vw;
+}
+
+.text5 {
+position: absolute;
+text-align: center;
+ opacity: 0;
+
+}
+
+.bubble5 {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: cyan;
+}
+
+.bubble5:hover ~ .text5{
+  opacity: 1;
+}
+
+.text5:hover .text5{
+  opacity: 1;
+}
+
+
 /* third section */
 .third-section {
   min-height: 100vh;
