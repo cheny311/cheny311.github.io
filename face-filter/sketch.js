@@ -14,7 +14,6 @@ let words = ["伱不湜我，所姒伱鈈会眀白伱對莪の薏図。", " ぺ�
 
 let currentWordIndex = 0
 
-//let images = ["img/bg1.png","img/bg2.png","img/bg3.png","img/bg5.png","img/bg6.png","img/bg7.png","img/bg8.png","img/bg9.png","img/bg10.png"];
 
 let img = [];
 let currentImage = 0;
@@ -65,17 +64,17 @@ function draw() {
 	image(capture, 0, 0, width, height); // draw camera
 	pop();
 
-	// push(); tt
-	// tint(255, 127); //half opacity
-	// for (let i = 0; i < img.length; i++) {
-	// 	image(img[currentImage], 0, 0, windowWidth, windowHeight);
-	// }
-	// pop();
+	push(); tt
+	tint(255, 127); //half opacity
+	for (let i = 0; i < img.length; i++) {
+		image(img[currentImage], 0, 0, windowWidth, windowHeight);
+	}
+	pop();
 
-	// push();tt
+	// push();tt 这个我想要叠加在画框array以及摄像头上面
 	// tint(255, 127);//half opacity
 	// //image(img44,0,0,windowWidth,windowHeight)
-	// //image(img33,0,0,windowWidth,windowHeight)
+	
 	//  pop();
    positions = tracker.getCurrentPosition(); // updates the tracker with current positions
 	// //     console.log(positions); // uncomment to see the list of arrays
@@ -84,15 +83,15 @@ function draw() {
 	push(); // 保存当前的坐标系统状态
 	translate(width, 0); //mirror back
 	scale(-1, 1);
-	noFill();
-	stroke(255);
-	if (positions.length > 0) {
-		fill(255, 0, 0);
-		rect(positions[19][0], positions[19][1], 90, 20);
-	}
+	// noFill();
+	// stroke(255);
+	// if (positions.length > 0) {
+	// 	fill(255, 0, 0);
+	// 	rect(positions[19][0], positions[19][1], 90, 20);
+	// }
 
 	if (tears.length > 0) {
-    console.log(tears);
+   // console.log(tears);
 		for (var i = 0; i < tears.length; i++) {
 			tears[i].move();
 			tears[i].display();
@@ -110,34 +109,34 @@ function draw() {
 	fill(green);
 	text(words[currentWordIndex], 88, 180);
 	pop();
-	push()
-	// loadPixels();
-	// for (let x = 0; x < width; x++) {
-	// 	for (let y = 0; y < height; y++) {
-	// 		let index = (x + y * width) * 3;
-	// 		let r = pixels[index];
-	// 		let g = pixels[index + 1];
-	// 		let b = pixels[index + 2];
-	// 		let a = pixels[index + 3];
-	// 		pixels[index] = (r + g + b) / 3;
-	// 		pixels[index + 1] = (r + g + b) / 3;
-	// 		pixels[index + 2] = (r + g + b) / 3;
-	// 	}
-	// }
-	// updatePixels();
+	push();
+	loadPixels();
+	for (let x = 0; x < width; x++) {
+		for (let y = 0; y < height; y++) {
+			let index = (x + y * width) * 3;
+			let r = pixels[index];
+			let g = pixels[index + 1];
+			let b = pixels[index + 2];
+			let a = pixels[index + 3];
+			pixels[index] = (r + g + b) / 3;
+			pixels[index + 1] = (r + g + b) / 3;
+			pixels[index + 2] = (r + g + b) / 3;
+		}
+	}
+	updatePixels();
 
-	// Apply blur to the text tt
-	// blur(1);
-	// textSize(90)
-	// let black = color('#1C2619');
-	// fill(black);
-	// tint(255, 127);
-	// text(words[currentWordIndex], 92, 180)
-	// pop()
-	// if (positions.length > 0) {tt
-	// 	image(img55, positions[11][0], positions[1][1], 220, 220);
-  //   initTear();//初始化泪滴图片
-	// }
+	//Apply blur to the text tt
+	blur(1);
+	textSize(90);
+	let black = color('#1C2619');
+	fill(black);
+	tint(255, 127);
+	text(words[currentWordIndex], 92, 180)
+	pop()
+	if (positions.length > 0) {tt
+		image(img55, positions[11][0], positions[1][1], 220, 220);
+    initTear();//初始化泪滴图片
+	}
 
   0==tears.length&&positions&&initTear();//初始化泪滴图片
   //console.log(positions)
@@ -151,9 +150,7 @@ function mousePressed() {
 function keyPressed() {
 	if (keyCode === ENTER) {
 		currentImage++;
-		console.log("i am here");
-
-		
+		//console.log("i am here");
 
 	} else if (keyCode === 32) { // Check if space bar is pressed
 		currentWordIndex = (currentWordIndex + 1) % words.length;
@@ -179,7 +176,7 @@ function DrawTear(img1, img2, pos1, pos2, siz1, siz2) {
 }
 
 function initTear() {
-  console.log(positions);
+ // console.log(positions);
   if(!positions||positions.length<67||positions.length<71){
     return;
   }
@@ -216,7 +213,7 @@ DrawTear.prototype = {
 	move: function() {
 		this.pos1.y += this.speed;
 		this.pos2.y += this.speed;
-    console.log(this.status)
+    //console.log(this.status)
 		// the circle is outside the canvas, retset its position at the top
 		if (!this.status&&this.pos1.y  > height/2) { //第一滴泪移动到3分之一高度时创建第二滴
 			this.status=true;
