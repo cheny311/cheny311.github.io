@@ -1,0 +1,68 @@
+.carousel-container {
+    position: relative;
+    background: green;
+    height: 500px;
+    width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  
+  .carousel-container input {
+    display: none;
+  }
+  
+  .container1, .container2, .container3, .container4 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+  
+  .container1 {
+    background: blue;
+  }
+  
+  .container2 {
+    background: yellow;
+  }
+  
+  .container3 {
+    background: pink;
+  }
+  
+  .container4 {
+    background: orange;
+  }
+  
+  #tab1:checked ~ .container1, #tab2:checked ~ .container2, #tab3:checked ~ .container3, #tab4:checked ~ .container4 {
+    left: 0%;
+    z-index: 2;
+  }
+  
+  #tab1:checked ~ .container2, #tab2:checked ~ .container3, #tab3:checked ~ .container4, #tab4:checked ~ .container1 {
+    left: 100%;
+  }
+  
+  #tab1:checked ~ .container3, #tab2:checked ~ .container4, #tab3:checked ~ .container1, #tab4:checked ~ .container2 {
+    left: 200%;
+  }
+  
+  #tab1:checked ~ .container4, #tab2:checked ~ .container1, #tab3:checked ~ .container2, #tab4:checked ~ .container3 {
+    left: -100%;
+  }
+  
+  .back {
+    position: absolute;
+    background: green;
+    padding: 20px;
+    left: 0px;
+    top: calc(50% - 25px);
+  }
+  
+  .forward {
+    position: absolute;
+    background: red;
+    padding: 20px;
+    right: 0px;
+    top: calc(50% - 25px);
+  }
