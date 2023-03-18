@@ -3,6 +3,16 @@ body{
     background-size:cover;
     
 }
+
+a:link { text-decoration: none; color: white;}
+
+a:visited { text-decoration: none; color: white;}
+
+a:hover { text-decoration: none; color: white;}
+
+a:active { text-decoration: none; }
+
+
 .carousel-container {
     position: relative;
     background: green;
@@ -30,6 +40,7 @@ body{
   
   .container1 {
     background: blue;
+    /* opacity:0.5; */
   }
   
   .container2 {
@@ -63,7 +74,7 @@ body{
   
   .back {
     position: absolute;
-    background: green;
+    background: rgb(122, 255, 142);
     padding: 20px;
     left: 0px;
     top: calc(50% - 25px);
