@@ -12,9 +12,9 @@ let words= ["伱不湜我，所姒伱鈈会眀白伱對莪の薏図。", " ぺ�
 let currentWordIndex=0
 
 //let images = ["img/bg1.png","img/bg2.png","img/bg3.png","img/bg5.png","img/bg6.png","img/bg7.png","img/bg8.png","img/bg9.png","img/bg10.png"];
-let currentImage = 0;
-let img = [];
 
+let img = [];
+let currentImage = 0;
 
 var img11,img22,img33,img44,img55
 var fish,beibei
