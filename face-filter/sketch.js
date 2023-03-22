@@ -13,11 +13,9 @@ let words = ["伱不湜我，所姒伱鈈会眀白伱對莪の薏図。", " ぺ�
 ];
 
 let currentWordIndex = 0
-
-
 let img = [];
 let currentImage = 0;
-var tears = [];
+// var tears = [];
 var img11, img22, img33, img44, img55
 var fish, beibei
 
@@ -45,15 +43,10 @@ function setup() {
 	capture.size(width, height);
 	capture.hide();
 
-
-
 	// load clmtrackr functions:
 	tracker = new clm.tracker(); // create a new clmtrackr object
 	tracker.init(); // initialize the object
 	tracker.start(capture.elt); // start tracking the video element capture.elt
-  // image(img11, 200, 400, 100, 100);
-  // image(img22, 400, 400, 100,100);
-	// console.log(img);
   
 }
 
@@ -64,44 +57,36 @@ function draw() {
 	image(capture, 0, 0, width, height); // draw camera
 	pop();
 
-	push(); tt
+	push(); 
 	tint(255, 127); //half opacity
 	for (let i = 0; i < img.length; i++) {
 		image(img[currentImage], 0, 0, windowWidth, windowHeight);
 	}
-	pop();
-
-	// push();tt 这个我想要叠加在画框array以及摄像头上面
-	// tint(255, 127);//half opacity
-	// //image(img44,0,0,windowWidth,windowHeight)
-	
-	//  pop();
+	pop();	
    positions = tracker.getCurrentPosition(); // updates the tracker with current positions
-	// //     console.log(positions); // uncomment to see the list of arrays
 
 	// //     // draw face outline
 	push(); // 保存当前的坐标系统状态
 	translate(width, 0); //mirror back
 	scale(-1, 1);
-	// noFill();
-	// stroke(255);
-	// if (positions.length > 0) {
-	// 	fill(255, 0, 0);
-	// 	rect(positions[19][0], positions[19][1], 90, 20);
-	// }
-
-	if (tears.length > 0) {
-   // console.log(tears);
-		for (var i = 0; i < tears.length; i++) {
-			tears[i].move();
-			tears[i].display();
-		}
-		if (tears.length > 5) {
-			tears.shift();
-		}
-	}
+	
+// 	if (tears.length > 0) {
+//    // console.log(tears);
+// 		for (var i = 0; i < tears.length; i++) {
+// 			tears[i].move();
+// 			tears[i].display();
+// 		}
+// 		if (tears.length > 5) {
+// 			tears.shift();
+// 		}
+// 	}
 	pop(); // 恢复之前保存的坐标系统状态
-	//   // image(images[currentImage], 0, 0, windowWidth, windowHeight);
+	push();
+	//   这个我想要叠加在画框array以及摄像头上面
+	tint(255, 127);//half opacity
+	image(img44,0,0,windowWidth,windowHeight);
+	pop();
+
 	push();
 	textSize(90)
 	textStyle(BOLD)
@@ -110,21 +95,6 @@ function draw() {
 	text(words[currentWordIndex], 88, 180);
 	pop();
 	push();
-	loadPixels();
-	for (let x = 0; x < width; x++) {
-		for (let y = 0; y < height; y++) {
-			let index = (x + y * width) * 3;
-			let r = pixels[index];
-			let g = pixels[index + 1];
-			let b = pixels[index + 2];
-			let a = pixels[index + 3];
-			pixels[index] = (r + g + b) / 3;
-			pixels[index + 1] = (r + g + b) / 3;
-			pixels[index + 2] = (r + g + b) / 3;
-		}
-	}
-	updatePixels();
-
 	//Apply blur to the text tt
 	blur(1);
 	textSize(90);
@@ -133,23 +103,36 @@ function draw() {
 	tint(255, 127);
 	text(words[currentWordIndex], 92, 180)
 	pop()
-	if (positions.length > 0) {tt
+	if (positions.length > 0) {
 		image(img55, positions[11][0], positions[1][1], 220, 220);
-    initTear();//初始化泪滴图片
+		  // image(img11, 200, 400, 100, 100);
+  // image(img22, 400, 400, 100,100);
+	//	image(img22, position[27][1],position[27][0],150,150); // 显示图片
+    // initTear();//初始化泪滴图片
 	}
+	// if (positions.length > 0) {
+	// 	//let leftEyeY = positions[27][1]; // 获取左眼垂直位置
+	
+	// 	//let imageY = map(leftEyeY, height * 0.3, height * 0.8, -img.height, height); // 根据左眼位置计算图片位置
+	// 	image(img22, position[27][1],position[27][0],50,50); // 显示图片
+	//   }
 
-  0==tears.length&&positions&&initTear();//初始化泪滴图片
-  //console.log(positions)
+//   0==tears.length&&positions&&initTear();//初始化泪滴图片
+
 }
 
 
 function mousePressed() {
 	saveCanvas("brokenheart" + ".jpg");
 }
+
 //img
 function keyPressed() {
 	if (keyCode === ENTER) {
 		currentImage++;
+		if (currentImage >= img.length) { // 如果计数器达到数组长度，将其重置为0
+			currentImage = 0;
+		  }
 		//console.log("i am here");
 
 	} else if (keyCode === 32) { // Check if space bar is pressed
@@ -162,63 +145,63 @@ function keyPressed() {
 	}
 }
 
-function DrawTear(img1, img2, pos1, pos2, siz1, siz2) {
-	// declare the properties
-	this.img1 = img1;
-	this.img2 = img2;
-	this.pos1 = pos1;
-	this.pos2 = pos2;
-	this.siz1 = siz1;
-	this.siz2 = siz2;
-  this.speed=5;
-  this.diameter=100;
-  this.status=false;
-}
+// function DrawTear(img1, img2, pos1, pos2, siz1, siz2) {
+// 	// declare the properties
+// 	this.img1 = img1;
+// 	this.img2 = img2;
+// 	this.pos1 = pos1;
+// 	this.pos2 = pos2;
+// 	this.siz1 = siz1;
+// 	this.siz2 = siz2;
+//   this.speed=5;
+//   this.diameter=100;
+//   this.status=false;
+// }
 
-function initTear() {
- // console.log(positions);
-  if(!positions||positions.length<67||positions.length<71){
-    return;
-  }
-  console.log(positions.length)
-  if(!positions[66]||positions[66].length<2||!positions[70]||positions[70].length<2){
-      return;
-  }
-	tears.push(new DrawTear(img11, img22, {
-		x: positions[66][0],
-		y: positions[66][1]
-	}, {
-		x: positions[70][0],
-		y: positions[70][1]
-	}, {
-		w: 100,
-		h: 100
-	}, {
-		w: 100,
-		h: 100
-	}));
-}
-DrawTear.prototype = {
-	constructor: DrawTear,
-	// *** Method: display the circle on the canvas *** 
-	display: function() {
+// function initTear() {
+//  // console.log(positions);
+//   if(!positions||positions.length<67||positions.length<71){
+//     return;
+//   }
+//   console.log(positions.length)
+//   if(!positions[66]||positions[66].length<2||!positions[70]||positions[70].length<2){
+//       return;
+//   }
+// 	tears.push(new DrawTear(img11, img22, {
+// 		x: positions[66][0],
+// 		y: positions[66][1]
+// 	}, {
+// 		x: positions[70][0],
+// 		y: positions[70][1]
+// 	}, {
+// 		w: 100,
+// 		h: 100
+// 	}, {
+// 		w: 100,
+// 		h: 100
+// 	}));
+// }
+// DrawTear.prototype = {
+// 	constructor: DrawTear,
+// 	// *** Method: display the circle on the canvas *** 
+// 	display: function() {
 
-		image(this.img1, this.pos1.x, this.pos1.y, this.siz1.w, this.siz1.h);
-		image(this.img2, this.pos2.x, this.pos2.y, this.siz2.w, this.siz2.h);
-    // image(img11, 200, 400, 100, 100);
-    // image(img22, 400, 400, 100,100);
-	},
+// 		image(this.img1, this.pos1.x, this.pos1.y, this.siz1.w, this.siz1.h);
+// 		image(this.img2, this.pos2.x, this.pos2.y, this.siz2.w, this.siz2.h);
+//     // image(img11, 200, 400, 100, 100);
+//     // image(img22, 400, 400, 100,100);
+// 	},
 
-	// *** Method: move the circle downwards ***
-	move: function() {
-		this.pos1.y += this.speed;
-		this.pos2.y += this.speed;
-    //console.log(this.status)
-		// the circle is outside the canvas, retset its position at the top
-		if (!this.status&&this.pos1.y  > height/2) { //第一滴泪移动到3分之一高度时创建第二滴
-			this.status=true;
-      initTear(); //同时只创建3滴
+// 	// *** Method: move the circle downwards ***
+// 	move: function() {
+// 		this.pos1.y += this.speed;
+// 		this.pos2.y += this.speed;
+//     //console.log(this.status)
+// 		// the circle is outside the canvas, retset its position at the top
+// 		if (!this.status&&this.pos1.y  > height/2) { //第一滴泪移动到3分之一高度时创建第二滴
+// 			this.status=true;
+//       initTear(); //同时只创建3滴
        
-    }
-	}
-}
+//     }
+// 	}
+// }
