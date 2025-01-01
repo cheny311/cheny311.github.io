@@ -1,0 +1,468 @@
+/* refer to cssportal.com*/
+
+@import url("reset.css");
+html{
+
+
+}
+.container {
+  width:100%;
+}
+.cent{
+    position: absolute;
+    width:40vw;
+   
+}
+a {
+    text-decoration: none;
+  }
+body {
+    padding:109px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+    font-size: 13px;  
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+
+  
+}
+img {
+  width: 100%;
+}
+p {
+    padding:10px;
+}
+
+#wrapper {
+    top: 10%;
+    height: auto;
+    width: auto; /* 设置宽度 */
+    background: radial-gradient(circle at center top, red, yellow, green);
+
+}
+#wrapper-content{
+    padding: 20px;
+}
+#headerwrap {
+   
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+   
+}
+
+#header {
+    border-radius: 5px;
+    height: 75px;
+    background: radial-gradient(circle, rgb(255, 218, 218), rgba(255, 255, 255, 0.558));
+    /* border-radius: 10px; */
+    box-shadow:10px 5px 20px #1feb52;
+    
+    /* border: 1px 10px #eb521f; */
+    margin: 5px;
+   
+}
+
+#contentwrap {
+    
+    width: 700px;
+    height: auto;
+    float:none;
+    margin: 0 auto;
+ 
+}
+
+#content {
+  
+    height: 50vh;
+    background: radial-gradient(at left bottom, rgba(214, 255, 202, 0.75), rgba(255, 0, 195, 0.75)); /* 圆形渐变，从左下角开始 */
+    background-size:auto;
+    box-shadow: 10px 5px 20px #1feb52;
+    margin: 5px;
+    position: relative;
+    
+}
+#img1 {
+    width:100%;
+    height:90%;
+     position:relative; /* 绝对定位相对于 #content */
+     background-image: url('weight.png');
+     background-size: 100%;
+     scale: 1;
+     z-index: 5;
+     border-radius: 0%;
+     animation: diagonalMove 5s linear infinite;
+     /* transform: translate(158px,105px); */
+     transform: translate(15%,10%);
+     
+   }
+ 
+   @keyframes diagonalMove {
+     0% {
+       /* transform: translate(138px,105px); */
+      
+       scale: 0.88;
+     }
+     50% {
+         /* transform: translate(128px,95px); */
+         scale: 0.95;
+         
+     }
+     100% {
+         /* transform: translate(128px,95px); */
+      
+         scale: 0.88;
+     }
+   }
+   #img2 {
+     width: 80%;
+     height: 80%;
+     background-image: url('weight.jpg'); /* 设置背景图片的 URL */
+     background-size: cover;
+     position: absolute; /* 绝对定位相对于 #content */
+     top: 0;
+     left: 0;
+     transform: translate(120px, 60px);
+     z-index: 1;
+     /* animation: blur 8s infinite; */
+   }
+#leftcolumnwrap {
+    width: 150px;
+    float: left;
+    margin: 0 auto;
+  }
+  
+  #leftcolumn {
+    /* 设置背景为透明，因为圆圈的背景将是颜色渐变 */
+    background: transparent;
+    height: 400px;
+    margin: 5px;
+    position: relative; /* 添加相对定位以容纳伪元素 */
+  }
+  
+  /* 创建三个圆圈 */
+  #leftcolumn::before,
+  
+  #leftcircle {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgb(255, 218, 218), rgb(61, 164, 174));
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  #leftcircle {
+ 
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle, rgb(255, 119, 119), rgb(82, 203, 255));
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-350px, -50px);
+  transition: background-image 0.3s ease; /* 添加平滑过渡效果 */
+  opacity: 1;
+  }
+  #leftcircle:hover  {
+    background-image: url('bamboo.png');
+    background-size: 90%;
+    opacity: 1;
+   
+ 
+
+  }
+  .image-button {
+    width: 100px;
+    height: 50px;
+    z-index: 12;
+    /* 可选的其他样式属性，如背景颜色、边框等 */
+  }
+  #leftcolumn::before {
+    animation: scale 3s linear infinite alternate;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgb(255, 255, 0), rgb(245, 168, 255));
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    left: -50%;
+    z-index: 5;
+  }
+  
+  @keyframes scale {
+    0% {
+		transform:scale(1.2) ;
+
+        /* transform: scale(0.5); */
+	}
+    25%{
+        rotate: 90deg;
+    }
+	100% {
+		transform:  scale(1);
+        border-radius: 4px;
+        rotate: 130deg;
+	}
+  }
+  
+
+
+
+  #mouse {
+    display: flex;
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgb(255, 119, 119), rgb(82, 203, 255));
+    border-radius: 50%;
+    position: absolute;
+    top: 90%;
+    left: -300%;
+    z-index: 6;
+    cursor: pointer;
+
+}
+
+.parent {
+    opacity: 0; /* 初始状态下将不透明度设置为0 */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(50%,-50%);
+    z-index:6;
+}
+
+#mouse:hover ~ .parent {
+  
+  
+    opacity: 1;
+    display: grid; /* 鼠标悬停在 #mouse 上时显示 .parent */
+    
+    grid-template-columns: repeat(4, 100px); /* 4列，每列宽度为100px */
+    grid-template-rows: repeat(3, 50px); /* 3行，每行高度为50px */
+    grid-column-gap: 20px; /* 列间距为10px */
+    grid-row-gap: 50px; /* 行间距为20px */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.div1 { grid-area: 4 / 1 / 5 / 2;
+    z-index: 6;
+    background-size: 100%;
+    width: 10vw;
+    transform: translate(-60px,-113px); 
+    
+    }
+    .div2 { grid-area: 2 / 2 / 3 / 3; 
+      width:10vw;
+      
+        z-index: 6;
+    }
+    .div3 { grid-area: 5 / 3 / 6 / 4;
+        transform: translate(120px,100px); 
+       scale: 2.4;
+      width:10vw;
+        z-index: 6;
+    }
+    .div4 { grid-area: 2 / 4 / 3 / 5;
+        transform: translate(-310px,332px); 
+      scale: 2;
+      width:10vw;
+        z-index: 6;
+    }
+    .div5 { grid-area: 1 / 5 / 2 / 6;
+        transform: translate(-530px,120px);
+        scale: 2;
+        z-index: 6;
+        width:10vw;
+    }
+
+
+#ctext{
+  top:0;
+  left:0;
+text-align: left;
+font-size: 20px;
+/* transform: translate(-500px,-600px); */
+position: absolute;
+width: 20vw;
+}
+#etext{
+  font-size: 20px;
+text-align: left;
+}
+
+
+.highlight {
+    color: rgb(255, 0, 85); /* 更改字体颜色为红色 */
+    font-size: 25px;
+    text-shadow: 5px 2px 5px rgb(5, 97, 255);
+    font-weight:bolder; /* 设置字体为粗体 */
+  }
+  
+
+ 
+
+
+    #mouse img{
+        width: 200px;
+      }
+
+
+
+.textbut{
+  transform: translate(15px,15px);
+}
+
+#text {
+    position: absolute;
+
+    font-weight: 400;
+    color: #000000;
+  }
+  
+  /* #text:hover {
+    color: #1feb52;
+    font-weight: 800;
+  }
+   */
+  #text2 {
+    position: relative;
+    position: center;
+    transform: translate(35px,11px);
+    font-weight: 800;
+   font-size: 40px;
+    color: #000000;
+    z-index: 5;
+  }
+ #text2:hover {
+   
+    font-weight: 800;
+    transform: translate(35px,11px);
+  }
+  #text3 {
+    position: relative;
+    position: center;
+    transform: translate(-55px,40px);
+    font-weight: 800;
+    color: #000000;
+    z-index: 5;
+  }
+  #text3:hover {
+    color: #1feb52;
+    font-weight: 800;
+  }
+  #text4 {
+    position: relative;
+    position: center;
+    transform: translate(15px,20px);
+    font-weight: 800;
+    color: #000000;
+    z-index: 5;
+  }
+  #text4:hover {
+    color: #1feb52;
+    font-weight: 800;
+  }
+#footerwrap {
+    width: 1000px;
+    float: left;
+   
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer {
+    height: 40px;
+    width: auto;
+    font-size: medium;
+    background: #c3ff00;
+    /* border-radius: 10px; */
+    box-shadow:10px 5px 20px #1feb52;
+    /* border: 1px solid #1feb52; */
+    margin: 5px;
+}
+#eyeswrap {
+    width: 1000px;
+    float: left;
+   
+    margin: 0 auto;
+    clear: both;
+}
+
+#eye {
+    height: 40px;
+    width: auto;
+    
+ 
+    margin: 5px;
+}
+
+ 
+  
+  
+  .black {
+    background-color: #efffdf; /* 黑色圈 */
+   
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 5px 5px 20px 2px #0ff;
+    /* position: absolute; */
+    position: absolute;
+    top: 89%;
+    left: 20%;
+    transform: translate(375px,-30px);
+    /* transform: translate(-50%, -50%); */
+    animation-duration: 2s; /* 动画持续时间 */
+    animation-timing-function: ease-in-out; /* 动画缓动函数 */
+    animation-iteration-count: infinite ; /* 无限循环动画 */
+    z-index: -1;
+  }
+  
+  .white {
+    background-color: #000000; /* 白色圈 */
+    position: relative;
+    animation-name: rotateBlack; /* 使用 rotateBlack 动画 */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+    /* position: absolute; */
+    position: absolute;
+    box-shadow: 5px 0px 10px 2px rgb(221, 255, 0);
+    top: 89%;
+    left: 20%;
+    transform: translate(0px,-30px);
+    /* transform: translate(-50%, -50%); */
+    animation-duration: 3s; /* 动画持续时间 */
+    animation-timing-function: ease-in-out; /* 动画缓动函数 */
+    animation-iteration-count: infinite; /* 无限循环动画 */
+    z-index: -4;
+  }
+  @keyframes rotateBlack {
+    0% {
+	transform: translate(0,10px) scale(1.2);
+     
+    }
+   
+	100% {
+     
+       
+	}
+  }
+/* #move {
+    background-image: url('../Achopstick/img/bg0.jpg');
+} */

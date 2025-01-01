@@ -1,0 +1,52 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ff0080, #91ff00);
+  color: #ffffff;
+  font-family: 'Montserrat Alternates', Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h2 {
+  font-size: 50px;
+  margin: 5% 5% 2% 5%; /* Reduced bottom margin */
+  text-shadow: 2px 2px 10px #64ff03;
+}
+
+label {
+  font-size: 26px;
+  text-shadow: 2px 2px 10px #ff0ce7;
+  margin: 0 5%;
+}
+
+/* Container for stars at the bottom */
+.star-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%; /* Adjust this based on how tall you want the star area to be */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden; /* Prevents stars from overflowing outside this container */
+  padding: 5px 0;
+}
+
+.blinking-star {
+  color: yellow; /* 星星的颜色 */
+  animation: blink-animation 2s infinite; /* 保持原有的闪烁动画 */
+  margin: 5px;
+  font-size: 34px; /* 统一的大小 */
+  text-shadow: 0 0 10px rgba(249, 204, 58, 0.8); /* 添加黄色光晕 */
+}
+
+
+@keyframes blink-animation {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0; }
+}

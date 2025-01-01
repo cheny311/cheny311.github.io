@@ -1,0 +1,47 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex-wrap: wrap; /* 在较小屏幕上允许内容换行 */
+}
+.menu-item {
+    text-align: center;
+    flex-grow: 1;
+    min-width: 150px; /* 设置最小宽度以避免内容太挤 */
+}
+.semi-circle {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(70, 202, 255);
+    border-radius: 50px 50px 0 0;
+    margin: auto;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* 响应式媒体查询 */
+@media (max-width: 600px) {
+    .semi-circle {
+        width: 60px; /* 在小屏幕上减小半圆大小 */
+        height: 30px;
+    }
+    p {
+        font-size: 14px; /* 减小字体大小 */
+    }
+}

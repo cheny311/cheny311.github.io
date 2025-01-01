@@ -1,0 +1,109 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    background: linear-gradient(to bottom, #fdd4d4, #5e81ed);
+    color: #e41919;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 100%;
+}
+h2 {
+  font-family: 'Montserrat Alternates', sans-serif;
+     font-size: 40px;
+     /* font-weight: bold; */
+     margin-top: 5%;
+     margin-left: 5%;
+     margin-right: 5%;
+     text-shadow: 2px 2px 10px #a8f866;
+ }
+ label {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 400;
+      font-size: 26px; /* 设置字体大小 */
+      color: #ffffff; /* 设置字体颜色 */
+      text-shadow: 2px 2px 10px #ff6200;
+      margin-left: 5%;
+      margin-right: 5%;
+      /* 其他样式 */
+    }
+  
+body {
+    background-color: #000  
+  }
+  
+  .blinking-star.fa-star {
+    opacity: 0.1;
+    color: transparent;
+    font-size: 80px;
+    margin-right: 20px;
+    text-shadow: 0 0 20px #ff00c3;
+  }
+  
+  /* Step 1: Make the stars blink using keyframe animation and opacity*/
+  .blinking-star {
+    -webkit-animation: blink-animation 1s infinite;
+    animation: blink-animation 1s infinite;
+  }
+  
+  @-webkit-keyframes blink-animation {
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes blink-animation {
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  /* Step 2: Make the second star blink with delay*/
+  .star2 {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  .star3 {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 1s;
+  }
+  .star4 {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 1.5s;
+  }
+  .star5 {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 2.0s;
+  }
+  
+  /* Step 3: Resize the stars as they blink */
+  .blinking-star {
+    -webkit-animation: blink-animation 1s infinite, scale-animation 1s infinite;
+    animation:         blink-animation 1s infinite, scale-animation 1s infinite;
+  }
+  
+  .star2 {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  
+  @-webkit-keyframes scale-animation {
+    0%   { transform: scale(0.5,0.5); }
+    50%  { transform: scale(1,1); }
+    100% { transform: scale(0.5,0.5); }
+  }
+  @keyframes scale-animation {
+    0%   { transform: scale(0.5,0.5); }
+    50%  { transform: scale(1,1); }
+    100% { transform: scale(0.5,0.5); }
+  }
+  input {
+    margin-left: 5%;
+    cursor: pointer;
+  }

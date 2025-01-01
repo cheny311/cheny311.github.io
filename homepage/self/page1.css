@@ -1,0 +1,352 @@
+/* refer to cssportal.com*/
+a {
+  text-decoration: none;
+}
+@import url("reset.css");
+html{
+
+
+}
+body {
+    padding:109px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+    font-size: 13px;  
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+
+  
+}
+
+p {
+    padding:10px;
+}
+
+#wrapper {
+    top: 10%;
+    height: auto;
+    width: auto; /* 设置宽度 */
+    background: radial-gradient(circle at center top, red, yellow, green);
+
+}
+#wrapper-content{
+    padding: 20px;
+}
+#headerwrap {
+   
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+   
+}
+
+#header {
+    border-radius: 5px;
+    height: 75px;
+    background: radial-gradient(circle, rgb(255, 218, 218), rgba(255, 255, 255, 0.558));
+    /* border-radius: 10px; */
+    box-shadow:10px 5px 20px #1feb52;
+    
+    /* border: 1px 10px #eb521f; */
+    margin: 5px;
+   
+}
+
+#contentwrap {
+    
+    width: 700px;
+    height: auto;
+    float:none;
+    margin: 0 auto;
+ 
+}
+
+#content {
+  
+    height: 50vh;
+    /* background: #fb00c175; */
+    background: radial-gradient(at left bottom, rgba(214, 255, 202, 0.75), rgba(255, 0, 195, 0.75)); /* 圆形渐变，从左下角开始 */
+    background-size:auto;
+    
+    /* border-radius: 5px; */
+    /* border: 1px solid #eb2495; */
+    box-shadow: 10px 5px 20px #1feb52;
+    margin: 5px;
+    position: relative;
+    
+}
+#img1 {
+    width: 400px;
+    height: 240px;
+    
+    /* background-color: #f00; 示例颜色 */
+    position: absolute; /* 绝对定位相对于 #content */
+  
+    /* background: #d618ec; */
+    background-image: url('stick.png');
+    background-size: 100%;
+    z-index: 5;
+	border-radius: 0%;
+	animation: diagonal-move-anim 3s linear infinite alternate;
+    transform: translate();
+  }
+  
+  #img2 {
+    width: 80%;
+    height: 80%;
+    background-image: url('bg0.jpg'); /* 设置背景图片的 URL */
+    background-size: cover;
+    position: absolute; /* 绝对定位相对于 #content */
+    top: 0;
+    left: 0;
+    transform: translate(120px, 80px);
+  }
+  @keyframes diagonal-move-anim {
+    0% {
+		transform: translate(350px, 160px)scale(1.2) ;
+
+        /* transform: scale(0.5); */
+	}
+
+	100% {
+		transform: translate(300px, 160px) scale(2);
+	}
+  }
+#leftcolumnwrap {
+    width: 150px;
+    float: left;
+    margin: 0 auto;
+  }
+  
+  #leftcolumn {
+    /* 设置背景为透明，因为圆圈的背景将是颜色渐变 */
+    background: transparent;
+    height: 400px;
+    margin: 5px;
+    position: relative; /* 添加相对定位以容纳伪元素 */
+  }
+  
+  /* 创建三个圆圈 */
+  #leftcolumn::before,
+  #leftcolumn::after,
+  #leftcircle {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgb(255, 218, 218), rgb(61, 164, 174));
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  #leftcircle {
+ 
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle, rgb(255, 119, 119), rgb(82, 203, 255));
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-350px, -50px);
+  transition: background-image 0.3s ease; /* 添加平滑过渡效果 */
+  opacity: 1;
+  }
+  #leftcircle:hover  {
+    background-image: url('chopchild.png');
+    background-size: 120%;
+    opacity: 1;
+   
+ 
+
+  }
+  .image-button {
+    width: 100px;
+    height: 50px;
+    
+    /* 可选的其他样式属性，如背景颜色、边框等 */
+  }
+  #leftcolumn::before {
+    animation: scale 3s linear infinite alternate;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgb(255, 255, 0), rgb(245, 168, 255));
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    left: -50%;
+    z-index: 5;
+  }
+  
+  @keyframes scale {
+    0% {
+		transform:scale(1.2) ;
+
+        /* transform: scale(0.5); */
+	}
+    25%{
+        rotate: 90deg;
+    }
+	100% {
+		transform:  scale(1);
+        border-radius: 4px;
+        rotate: 130deg;
+	}
+  }
+  #leftcolumn::after {
+    animation: scale1 9s linear infinite alternate;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #d618ec, rgb(255, 255, 8));
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-550px,300px);
+    top: 60%;
+    left: -30%;
+    z-index: 3;
+    /* box-shadow: 0px 10px 480px 100px rgb(132, 132, 132) */
+  }
+  @keyframes scale1 {
+    0% {
+		transform:translate(180px,280px)scale(0.1) ;
+ 
+        opacity: 0;
+     
+	}
+    45%{
+        rotate: 280deg;
+        transform:  scale(0.5);
+        opacity: 1;
+    }
+	100% {
+        opacity: 0;
+		transform:  scale(1);
+        border-radius: 25%;
+        rotate: 0deg;
+	}
+  }
+#text {
+    position: absolute;
+
+    font-weight: 400;
+    color: #000000;
+  }
+  
+
+  #text2 {
+    position: relative;
+    position: center;
+    transform: translate(30px,11px);
+    font-weight: 800;
+   font-size: 40px;
+    color: #000000;
+    z-index: 8;
+  }
+  #text2:hover {
+    /* color: #1feb52;
+    font-weight: 800; */
+    transform: translate(45px,35px);
+   /* overflow: hidden; */
+  }
+  #text3 {
+    position: relative;
+    position: center;
+    transform: translate(-55px,40px);
+    font-weight: 800;
+    color: #000000;
+    z-index: 5;
+  }
+  #text3:hover {
+    color: #1feb52;
+    font-weight: 800;
+  }
+#footerwrap {
+    width: 1000px;
+    float: left;
+   
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer {
+    height: 40px;
+    width: auto;
+    font-size: medium;
+    background: #c3ff00;
+    /* border-radius: 10px; */
+    box-shadow:10px 5px 20px #1feb52;
+    /* border: 1px solid #1feb52; */
+    margin: 5px;
+}
+#eyeswrap {
+    width: 1000px;
+    float: left;
+   
+    margin: 0 auto;
+    clear: both;
+}
+
+#eye {
+    height: 40px;
+    width: auto;
+    
+ 
+    margin: 5px;
+}
+
+ 
+  
+  
+  .black {
+    background-color: #efffdf; /* 黑色圈 */
+   
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 5px 5px 20px 2px #0ff;
+    /* position: absolute; */
+    position: absolute;
+    top: 79%;
+    left: 20%;
+    transform: translate(375px,-30px);
+    /* transform: translate(-50%, -50%); */
+    animation-duration: 2s; /* 动画持续时间 */
+    animation-timing-function: ease-in-out; /* 动画缓动函数 */
+    animation-iteration-count: infinite; /* 无限循环动画 */
+    z-index: -1;
+  }
+  
+  .white {
+    background-color: #000000; /* 白色圈 */
+    position: relative;
+    animation-name: rotateBlack; /* 使用 rotateBlack 动画 */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+    /* position: absolute; */
+    position: absolute;
+    box-shadow: 5px 0px 10px 2px rgb(221, 255, 0);
+    top: 79%;
+    left: 20%;
+    transform: translate(0px,-30px);
+    /* transform: translate(-50%, -50%); */
+    animation-duration: 3s; /* 动画持续时间 */
+    animation-timing-function: ease-in-out; /* 动画缓动函数 */
+    animation-iteration-count: infinite; /* 无限循环动画 */
+    z-index: -4;
+  }
+  @keyframes rotateBlack {
+    0% {
+	transform: translate(0,10px) scale(1.2);
+     
+    }
+   
+	100% {
+     
+       
+	}
+  }
+/* #move {
+    background-image: url('../Achopstick/img/bg0.jpg');
+} */

@@ -1,0 +1,245 @@
+body {
+  background: linear-gradient(to bottom, #ff0080, #91ff00);
+  color: #73beff;
+  font-family: "幼圆", "Yuanti SC", "STYuanti-SC-Regular", "Microsoft YaHei", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header h1 {
+
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 4rem; /* 80px */
+  font-weight: bold;
+  text-shadow: 2px 2px 10px #ffffff;
+  margin: 1rem 0;
+}
+.stars {
+  display: flex;
+  flex-wrap: wrap; /* 允许内容自动换行 */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  z-index: 10;
+}
+
+.circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: start; /* 圆圈从左侧开始排列 */
+  overflow-x: auto; /* 允许水平滚动 */
+  z-index: 1000; /* 确保在最前面 */
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 10px;
+  background-color: #ff0000; /* 默认红色，可通过类修改 */
+}
+
+.main p {
+  font-family: "幼圆", "Yuanti SC", "STYuanti-SC-Regular", "Microsoft YaHei", sans-serif;
+  color: #ff0000; /* 更亮的颜色以提高对比度 */
+  font-size: 4rem; /* 48px */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 调整阴影以增加深度但不过于夸张 */
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* 添加半透明背景以增强文字的可读性 */
+  padding: 10px;
+  border-radius: 10px; /* 轻微的圆角效果 */
+}
+
+.blinking-star {
+  animation: blink-animation 2s infinite;
+  display: inline-block;
+  font-size: 24px; /* 根据你的设计需求调整大小 */
+  color: yellow; /* 你已经在JavaScript中设置 */
+}
+
+.button {
+  background-color: #fd6be0; /* 粉红色背景 */
+  color: white; /* 白色文字 */
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.5rem; /* 24px */
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 25px; /* 圆角效果 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* 轻微的阴影 */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+  background-color: #f06ab3; /* 悬停时的背景色 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 增加阴影效果 */
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes breathing {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 0, 140, 0.75); }
+  50% { box-shadow: 0 0 25px rgb(0, 255, 140); }
+}
+
+.button {
+  animation: breathing 4s infinite;
+  
+}
+
+.button:hover {
+  background-color: #f06ab3; /* 悬停时的背景色 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* 更大的阴影效果 */
+  transform: scale(1.45); /* 轻微放大 */
+}
+
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2rem; /* 调整为40px */
+  }
+
+  .button {
+      font-size: 1rem; /* 调整为16px */
+      padding: 8px 16px; /* 减少填充 */
+  }
+
+  main p {
+      font-size: 1rem; /* 调整文字大小为16px */
+  }
+
+  .circle, .light-bulb {
+      width: 15px; /* 减小灯泡和圆圈的大小 */
+      height: 15px;
+  }
+  
+  .stars i.blinking-star {
+    font-size: 14px; /* 小屏幕上减小星星的大小 */
+  }  
+  .stars i, .blinking-star {
+      font-size: 16px; /* 调整星星大小 */
+  }
+}
+
+@keyframes blink-animation {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+.light-bulb-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+  background: linear-gradient(to right, #ff0080, #91ff00);
+  z-index: 100; /* 确保这个容器在页面顶部 */
+}
+
+.light-bulb {
+  width: 15px; /* 调整为固定大小，或者使用百分比 */
+  height: 15px; /* 保证宽高一致 */
+  border-radius: 50%;
+  background-color: yellow;
+  margin: 5px;
+  box-shadow: 0 0 8px rgba(255, 255, 0, 0.8);
+  transition: all 0.5s ease;
+
+}
+
+
+.light-bulb:hover {
+  background-color: #ffff00;
+  box-shadow: 0 0 12px #ffff00;
+  transform: scale(1.5);  /* 放大效果 */
+  border: 2px solid #ffffff;  /* 添加白色边框增加视觉效果 */
+}
+.button-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 50px; /* Add space above the button */
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+}
+.button-container {
+  text-align: center; /* Center the button horizontally */
+  margin-top: 20px; /* Add space above the button */
+}
+.button2 {
+  --b: 2px;           /* Border thickness */
+  --s: 0.5em;         /* Padding size */
+  --color: #fc01b1;
+  /* --color: #88ff00;   Primary line color (green) */
+  --hover-color:#82867f ; /* Hover line color (pink) */
+  --active-color: #fc0101; /* Active line color (red) */
+
+  padding: var(--s) calc(var(--s) * 2);
+  color: var(--color); /* Initial text color */
+  border: var(--b) solid var(--color); /* Initial border color */
+  border-radius: 5px; /* Slightly rounded corners */
+  background: none; /* Transparent background */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative; /* Needed for pseudo-elements */
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.button2::before::before,
+.button2::after {
+  content: '';
+  position: absolute;
+  height: var(--b); /* Same as border thickness */
+  width: 100%;
+  background: var(--hover-color); /* Hover line color */
+  top: 0;
+  left: -100%; /* Initially off the button */
+  transition: all 0.3s ease-in-out;
+}
+
+.button2::after {
+  top: auto; /* Position at the bottom */
+  bottom: 0;
+  left: 100%; /* Initially off the button */
+}
+
+.button2:hover::before {
+  left: 0; /* Slide the top line in */
+}
+
+.button2:hover::after {
+  left: 0; /* Slide the bottom line in */
+}
+
+.button2:hover {
+  color: var(--hover-color); /* Change text color to hover color */
+  border-color: var(--hover-color); /* Change border color to hover color */
+}
+
+.button2:active {
+  color: white; /* White text on active */
+  background: var(--active-color); /* Active background color */
+  border-color: var(--active-color); /* Match border to active background */
+}

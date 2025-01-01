@@ -1,0 +1,193 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header,
+footer {
+    text-align: center;
+    margin: 20px;
+}
+
+.button-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    /* Add space above the button */
+    display: flex;
+    justify-content: center;
+    /* Center the button horizontally */
+}
+
+.button-container {
+    text-align: center;
+    /* Center the button horizontally */
+    margin-top: 20px;
+    /* Add space above the button */
+}
+
+.button {
+    --b: 2px;
+    /* Border thickness */
+    --s: 0.5em;
+    /* Padding size */
+    --color: #82867f;
+    /* --color: #88ff00;   Primary line color (green) */
+    --hover-color: #fc01b1;
+    /* Hover line color (pink) */
+    --active-color: #fc0101;
+    /* Active line color (red) */
+
+    padding: var(--s) calc(var(--s) * 2);
+    color: var(--color);
+    /* Initial text color */
+    border: var(--b) solid var(--color);
+    /* Initial border color */
+    border-radius: 5px;
+    /* Slightly rounded corners */
+    background: none;
+    /* Transparent background */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    /* Needed for pseudo-elements */
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.button::before,
+.button::after {
+    content: '';
+    position: absolute;
+    height: var(--b);
+    /* Same as border thickness */
+    width: 100%;
+    background: var(--hover-color);
+    /* Hover line color */
+    top: 0;
+    left: -100%;
+    /* Initially off the button */
+    transition: all 0.3s ease-in-out;
+}
+
+.button::after {
+    top: auto;
+    /* Position at the bottom */
+    bottom: 0;
+    left: 100%;
+    /* Initially off the button */
+}
+
+.button:hover::before {
+    left: 0;
+    /* Slide the top line in */
+}
+
+.button:hover::after {
+    left: 0;
+    /* Slide the bottom line in */
+}
+
+.button:hover {
+    color: var(--hover-color);
+    /* Change text color to hover color */
+    border-color: var(--hover-color);
+    /* Change border color to hover color */
+}
+.explore-button {
+    padding: 15px; /* Adjust padding to maintain the circle shape depending on your text length */
+    background-color: #ff00ff; /* Example color, adjust as needed */
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 10px; /* Adds space between the video and the button */
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%; /* This makes the button circular */
+    width: 50px; /* Set a specific width */
+    height: 50px; /* Set a specific height to match the width for a perfect circle */
+    line-height: 20px; /* Adjust line height to vertically center the text, might need tweaking */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore-button:hover {
+    background-color: #ff66ff; /* Lighter shade for hover */
+    box-shadow: 0 0 20px #d6ff98; /* Glowing effect */
+}
+
+
+.button:active {
+    color: white;
+    /* White text on active */
+    background: var(--active-color);
+    /* Active background color */
+    border-color: var(--active-color);
+    /* Match border to active background */
+}
+
+h1 {
+    color: #d0ff00;
+    text-shadow: 5px 0 20px#ff00ee;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the minmax values based on your preference */
+    gap: 20px; /* Space between grid items */
+    align-items: start; /* Aligns items at the start of each cell */
+}
+
+.grid-item {
+    width: 100%; /* Ensures all grid items take full width of their cell */
+    height: auto; /* Keeps the original aspect ratio for images */
+    object-fit: cover; /* Ensures videos and images cover the area without stretching */
+}
+
+.grid-item video {
+    width: 100%; /* Full width of the grid cell */
+    height: 100%; /* Optional: set a specific height if needed */
+}
+
+
+video {
+    max-width: 90%;
+    border: 5px solid #88ff00;
+    /* Bright green border */
+    box-shadow: 0px 0px 20px #ff00d9;
+    /* Light green glow */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+
+.video-container {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    video {
+        max-width: 95%;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="newedition.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+    <main><audio id="audio" src="pps.mp3" controls style="display:none;"></audio>
+
+        <h1></h1>  
+    </main>
+    <div id="wrapper">
+        <div id="headerwrap">
+        <div id="header">
+            <p>The Story of A Chopstick</p>
+        </div>
+        
+        </div>
+        
+        <div id="leftcolumnwrap">
+          
+              <div id="leftcolumn">
+                <a href="page1.html">
+                <div id="leftcircle" class="image-button">
+          
+                    <div id="text2">
+                        <p>A Chopstick</p>
+                    </div>
+             
+     
+                  
+                    
+                    </div>
+                  </a>
+            </div>
+            
+        </div>
+        <div class="button-container">
+          <a class="button" href="../index.html" style="z-index: 11;">Home Page</a>
+        </div>
+        <div id="contentwrap">
+        <div id="content">
+           <p>Chopsticks, the essential household eating utensils that people use in different places use these tools, especially in China, people can find them everywhere. They come in different shapes, sizes, represent different cultures and wishes. 
+            They always expected to come in pairs, well-conditioned, and good-looking to make themselves more attractive to people. 
+          </p><p>I see myself in that. Growing up, I faced many expectations.
+          </p> <p> There is always the desire that I want to break from these, for example, how society taught women to behave in a certain way, along with how my parents told me to be a certain kind of person. 
+            There are some feelings that  I feel embarrassed to speak about and I often use other objects to express my feelings. In symbolizing my silent self, the chopstick contains identities and longings too delicate, yet meaningful, to expose. </p>
+        </div>
+        </div>
+        
+        <div id="footerwrap">
+          
+          <div id="footer">
+            <p>Click anywhere on this page to play sound.</p>
+        </div>
+        
+        </div>
+        
+        <div class="parent">
+            <div class="div1">
+              <img src="p1.png" alt="Photo 1">
+             
+            </div>
+            <div class="div2">
+              <img src="b4.png" alt="Photo 2">
+            </div>
+            <div class="div3">
+              <img src="f5.png" alt="Photo 3">
+            </div>
+            <div class="div4">
+              <img src="c4.png" alt="Photo 4">
+            </div>
+            <div class="div5">
+              <img src="dd5.png" alt="Photo 5">
+            </div>
+          </div>
+          
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          document.body.addEventListener('click', function() {
+              var audio = document.getElementById('audio');
+              if (audio.paused) {
+                  audio.play();
+              } else {
+                  audio.currentTime = 0;
+                  audio.play();
+              }
+          });
+          // Attach event listener to all buttons with the class 'image-button'
+          document.querySelectorAll('.image-button').forEach(function(button) {
+              button.addEventListener('click', function() {
+                  var audio = document.getElementById('audio');
+                  if (audio.paused) {
+                      audio.play();
+                  } else {
+                      audio.currentTime = 0;
+                      audio.play();
+                  }
+              });
+          });
+      });
+  </script>
+    
+  
+</body>
+
+</html>

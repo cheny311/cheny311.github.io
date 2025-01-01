@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+.button-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 50px; /* Add space above the button */
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+}
+.button-container {
+  text-align: center; /* Center the button horizontally */
+  margin-top: 20px; /* Add space above the button */
+}
+.button {
+  --b: 2px;           /* Border thickness */
+  --s: 0.5em;         /* Padding size */
+  --color: #82867f;
+  /* --color: #88ff00;   Primary line color (green) */
+  --hover-color: #fc01b1; /* Hover line color (pink) */
+  --active-color: #fc0101; /* Active line color (red) */
+
+  padding: var(--s) calc(var(--s) * 2);
+  color: var(--color); /* Initial text color */
+  border: var(--b) solid var(--color); /* Initial border color */
+  border-radius: 5px; /* Slightly rounded corners */
+  background: none; /* Transparent background */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative; /* Needed for pseudo-elements */
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  position: absolute;
+  height: var(--b); /* Same as border thickness */
+  width: 100%;
+  background: var(--hover-color); /* Hover line color */
+  top: 0;
+  left: -100%; /* Initially off the button */
+  transition: all 0.3s ease-in-out;
+}
+
+.button::after {
+  top: auto; /* Position at the bottom */
+  bottom: 0;
+  left: 100%; /* Initially off the button */
+}
+
+.button:hover::before {
+  left: 0; /* Slide the top line in */
+}
+
+.button:hover::after {
+  left: 0; /* Slide the bottom line in */
+}
+
+.button:hover {
+  color: var(--hover-color); /* Change text color to hover color */
+  border-color: var(--hover-color); /* Change border color to hover color */
+}
+
+.button:active {
+  color: white; /* White text on active */
+  background: var(--active-color); /* Active background color */
+  border-color: var(--active-color); /* Match border to active background */
+}
+
+.back-text {
+  position: relative;
+  padding: 20px;
+  color: #82867f;
+  font-size: 65px;
+  line-height: 1.4;
+}
+
+.back-text:hover {
+  color: rgb(255, 0, 174);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative; /* Use relative positioning */
+  top: -450vh; /* Move the grid upwards by 50px */
+  margin: 0 auto; /* Center the grid horizontally */
+  gap: 10px; /* Add spacing between items */
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: calc(33.33% - 20px); /* Responsive width for three images per row */
+  max-width: 300px; /* Limit the max width of the images */
+  aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+  margin: 10px;
+  position: relative;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.item > img {
+  width: 100%; /* Cover the full width of the item */
+  height: 100%; /* Cover the full height of the item */
+  object-fit: cover; /* Ensure the image scales properly without distortion */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.item > .text {
+  position: absolute; /* Position text absolutely within .item */
+  z-index: 1; /* Ensure text is behind the image */
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  opacity: 1; /* Text remains visible under the image */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .back-text {
+      font-size: 40px;
+      padding: 10px;
+  }
+
+  .flex-container {
+      flex-direction: column;
+  }
+
+  .item {
+      width: calc(50% - 20px);
+      max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+      width: calc(100% - 20px);
+      max-width: none;
+  }
+}

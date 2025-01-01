@@ -1,0 +1,767 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 大标题文字 */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Quicksand";
+    color: white;
+    margin: 0;
+    background-color: black;
+
+}
+
+/* 大标题后面的框 */
+.first-section {
+    min-height: 5vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+    height: 150px;
+}
+
+.rectangle {
+    position: absolute;
+    width: 70vw;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: bold;
+    transition: all 2s ease;
+}
+
+.rectangle span {
+    font-size: 2rem;
+    /* 设置字体大小 */
+    position: relative;
+    /* 保持文字位置相对于其父容器 */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* 添加动画效果 */
+}
+
+/* 鼠标悬停时 */
+.rectangle span:hover {
+    transform: scale(1.1);
+    /* 放大文字 */
+    color: #91ff00;
+    /* 改变颜色 */
+    z-index: 10;
+    /* 确保文字显示在顶部 */
+}
+
+/* 确保其他文字不跟随鼠标 */
+.rectangle:hover span:not(:hover) {
+    opacity: 0.6;
+    /* 透明度降低 */
+    transform: scale(1);
+    /* 保持原始大小 */
+}
+
+
+.rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 5px;
+}
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 800% 100%;
+}
+
+#shadowBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: auto;
+    gap: 10px;
+}
+
+#shadowBox h3 {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+    #shadowBox h3:nth-child(n+4) {
+        display: none;
+    }
+
+    @keyframes rainbow_animation {
+
+        0%,
+        100% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 100% 0;
+        }
+    }
+}
+
+@-webkit-keyframes wavy {
+
+    0%,
+    40%,
+    100% {
+        transform: translateY(0)
+    }
+
+    20% {
+        transform: translateY(-20px)
+    }
+}
+
+
+/* Image Placeholder */
+.image-placeholder {
+    width: 300px;
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* 脚趾头家族 */
+.rectangles {
+    position: relative;
+    /* Keep this as the reference for children */
+    display: flex;
+    justify-content: center;
+    /* Center the rectangles horizontally */
+    align-items: center;
+    /* Center the items vertically (optional) */
+    gap: 15px;
+    /* Space between rectangles */
+    margin: 20px auto;
+    /* Center the entire container */
+    width: 80%;
+    /* Adjust width to control alignment */
+}
+
+/* Individual Rectangle Styling */
+.rect-container {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.rect-container:nth-child(1) {
+    background-color: blue;
+    background-image: url('Unspoken_Pain.png');
+    /* Replace with specific image URLs */
+    position: relative;
+    height: 16vh;
+    width: 120px;
+    top: 10vh;
+    /* left:10px */
+}
+
+.rect-container:nth-child(1):hover {
+    background-image: url('Unspoken_Pain.png');
+    /* Add image to the blue rectangle */
+    background-size: 140%;
+    /* Slightly enlarge the image */
+    background-position: center 25px;
+    /* Center horizontally, shift down by 5px vertically */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+}
+
+/* Hover effect on the small light blue rectangle */
+.rect-container:nth-child(1)::after:hover {
+    content: "";
+    background-color: lightblue;
+    /* Keep or adjust color if needed */
+    opacity: 0.5;
+    /* Optional visual feedback */
+}
+
+.rect-container:nth-child(2) {
+    background-color: yellow;
+    height: 10vh;
+    width: 90px;
+    top: 3vh;
+    /* width: 110px */
+}
+
+.rect-container:nth-child(2):hover {
+    background-image: url('chui.png');
+    /* Add image to the blue rectangle */
+    background-size: 75%;
+    /* Slightly enlarge the image */
+    background-position: center 15px;
+    /* Center horizontally, shift down by 5px vertically */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+}
+
+.rect-container:nth-child(3) {
+    background-color: purple;
+    width: 80px;
+    top: 4vh;
+    height: 12vh;
+}
+
+.rect-container:nth-child(3):hover {
+    background-image: url('fishhh.png');
+    /* Add image to the blue rectangle */
+    background-size: 100%;
+    /* Slightly enlarge the image */
+    background-position: center 15px;
+    /* Center horizontally, shift down by 5px vertically */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+}
+
+.rect-container:nth-child(4) {
+    background-color: orange;
+    border-radius: 16px;
+    height: 10vh;
+    top: 6vh;
+    width: 80px;
+}
+
+.rect-container:nth-child(4):hover {
+    background-image: url('nana.png');
+    /* Add image to the blue rectangle */
+    background-size: 80%;
+    /* Slightly enlarge the image */
+    background-position: center 15px;
+    /* Center horizontally, shift down by 5px vertically */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+}
+
+.rect-container:nth-child(5) {
+    background-color: pink;
+    border-radius: 8px;
+    height: 8vh;
+    top: 10vh;
+    width: 80px;
+}
+
+.rect-container:nth-child(5):hover {
+    background-image: url('filter.png');
+    /* Add image to the blue rectangle */
+    background-size: 80%;
+    /* Slightly enlarge the image */
+    background-position: center 5px;
+    /* Center horizontally, shift down by 5px vertically */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+}
+
+.rect-container::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 30px;
+    /* background-color: red; */
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.rect-container:nth-child(1)::after {
+    background-color: lightblue;
+    top: -10px;
+    Height: 5vh;
+    width: 80%;
+}
+
+.rect-container:nth-child(2)::after {
+    background-color: gold;
+    top: -12px;
+    width: 80%;
+    height: 4vh;
+}
+
+.rect-container:nth-child(3)::after {
+    background-color: violet;
+    top: -8px;
+    width: 80%;
+    height: 3vh;
+}
+
+.rect-container:nth-child(4)::after {
+    background-color: coral;
+    top: -6px;
+    width: 75%;
+    height: 3vh;
+
+}
+
+.rect-container:nth-child(5)::after {
+    background-color: rgb(141, 27, 46);
+    top: -5px;
+    width: 60%;
+    height: 2vh;
+}
+
+.rect-container:hover::after {
+    content: "";
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid white;
+    /* Optional border */
+}
+
+/* Active (click) effect */
+.rect-container:active::after {
+    transform: translateX(-50%) scale(0.95);
+    /* Add a slight "press" effect */
+    transition: transform 0.2s ease;
+}
+
+.footprint {
+    position: absolute;
+    /* Remove it from the document flow */
+    left: 50%;
+    /* Center horizontally in its parent container */
+    transform: translateX(-50%);
+    /* Offset for perfect centering */
+    top: 80px;
+    /* Adjust vertical spacing from the rectangles */
+    width: 50%;
+    /* Responsive size */
+    max-width: 300px;
+    /* Set max width for scaling */
+    height: auto;
+    /* Maintain aspect ratio */
+    fill: blue;
+    /* Keep the color */
+}
+
+.photo-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+.nail-clipper {
+    position: relative;
+    width: 80%;
+    /* 设置缩小比例 */
+    max-width: 240px;
+    /* 缩小后的最大宽度 */
+    height: auto;
+    /* 保持纵横比 */
+    margin-top: 250px;
+    /* 调整下移距离 */
+    transition: transform 0.1s ease;
+    /* 平滑鼠标跟随效果 */
+    pointer-events: none;
+    /* 防止鼠标事件干扰 */
+}
+
+/* 指甲碎片 */
+.semi-circle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 垂直居中 */
+    align-items: center;
+    /* 水平居中 */
+    gap: 15px;
+    /* 控制间距 */
+    position: absolute;
+    /* 保留绝对定位 */
+    top: 50%;
+    /* 垂直居中 */
+    transform: translateY(-50%);
+    /* 修正偏移 */
+}
+
+.semi-circle-container.left {
+    left: 10%;
+}
+
+.semi-circle-container.right {
+    right: 10%;
+}
+
+.semi-circle {
+    width: 50px;
+    height: 25px;
+    background-color: #ff6347;
+    border-radius: 25px 25px 0 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 100%;
+    /* Adjust this value to control the text position */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: opacity 0.3s;
+}
+
+.semi-circle:hover+.overlay-text {
+    display: block;
+    opacity: 1;
+}
+
+.semi-circle:hover {
+    transform: scale(1.2);
+    /* 悬停时放大 */
+    background-color: #ff4500;
+    /* 悬停时颜色变化 */
+    border: 2px solid white;
+}
+
+.semi-circle-link {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* 786大小 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .rainbow_text_animated {
+        font-size: 6rem;
+        /* Larger text for smaller screens */
+    }
+
+    .image-placeholder {
+        width: 80%;
+        /* Adjust placeholder width */
+    }
+
+    .nail-clipper {
+        width: 50%;
+        /* Scale down nail clipper */
+        margin-top: 250px;
+        /* Move nail clipper closer to footprint bottom */
+        transform: translateY(30%);
+        /* Fine-tune vertical position */
+    }
+
+    .rect-container {
+        width: 80px;
+        /* Adjust rectangle size */
+        height: 40px;
+    }
+
+    .rect-container::after {
+        width: 50%;
+        /* Adjust inner rectangle size */
+        height: 25%;
+        /* Adjust rectangle proportions */
+    }
+
+    .footprint {
+        width: 70%;
+        /* Scale down footprint for smaller screens */
+    }
+
+    .semi-circle-container {
+        margin-top: 400px;
+        /* Move semi-circles down */
+    }
+}
+
+/* 1200大小 */
+@media (min-width: 1200px) {
+    .semi-circle-container {
+        margin-top: 300px;
+        /* Slightly move semi-circles up */
+    }
+
+    .nail-clipper {
+        width: 60%;
+        /* Scale up nail clipper */
+        margin-top: 250px;
+        /* Adjust vertical position */
+        transform: translateY(0);
+        /* Reset any previous vertical adjustments */
+    }
+
+    .footprint {
+        width: 80%;
+        /* Scale up footprint for visual balance */
+    }
+
+    .rect-container {
+        width: 100px;
+        /* Increase rectangle width */
+        height: 60px;
+        /* Increase rectangle height */
+    }
+
+    .semi-circle-container {
+        gap: 30px;
+        /* 更大间距 */
+        margin-top: 250px;
+        /* 根据需求调整 */
+    }
+
+    .semi-circle {
+        width: 80px;
+        height: 40px;
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+a {
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.navigation {
+    list-style-type: none;
+    /* Removes default list styling */
+    padding: 0;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #0400ff;
+    /* Dark background for the navigation bar */
+    text-align: center;
+    /* Centers the links */
+}
+
+ul.navigation li {
+    display: inline-block;
+    margin-right: 10px;
+    /* Spacing between items */
+}
+
+ul.navigation li a {
+    display: inline-block;
+    padding: 10px 15px;
+    /* Padding around the text */
+    color: white;
+    /* Text color */
+    text-decoration: none;
+    /* No underline */
+    font-size: 18px;
+    /* Sets the font size */
+    font-family: 'Arial', sans-serif;
+    /* Font style */
+}
+
+ul.navigation li a:hover {
+    border-radius: 20px;
+    /* Rounded corners for a smoother look */
+    background-color: #ff0077;
+    /* Pink background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Adding shadow with some transparency */
+    color: #fff;
+    /* White text color on hover */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+div.mobile-menu {
+    display: none;
+    /* Hidden by default, shown in mobile view */
+    background-color: #333;
+    /* Background color */
+    text-align: center;
+    /* Center alignment */
+    padding: 10px;
+    /* Padding */
+}
+
+div.mobile-menu a {
+    color: white;
+    /* Text color */
+    text-decoration: none;
+    /* No underline */
+    font-size: 16px;
+    /* Font size */
+    font-family: 'Arial', sans-serif;
+    /* Font style */
+}
+
+li {
+    margin-right: 2rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+.main-title {
+    font-style: italic;
+    font-family: serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.navigation {
+    display: none;
+    font-size: 2rem;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    z-index: 2;
+}
+
+.mobile-navigation {
+    background: rgb(217, 255, 0);
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    display: none;
+}
+
+.mobile-navigation li {
+    margin: 0;
+}
+
+.header.open .mobile-navigation {
+    display: flex;
+    position: absolute;
+    background: rgb(81, 63, 212);
+}
+
+
+#Layer_1 {
+    margin-top: 120px;
+}
+
+
+.image-box {
+    margin: 25px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1199px) {
+    .semi-circle-container {
+        gap: 20px;
+        /* 根据需要调整间距 */
+        margin-top: 300px;
+        /* 修正整体位置 */
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .header {
+        justify-content: space-between;
+        position: relative;
+        /* Adjust header positioning */
+    }
+
+    .main-title {
+        text-align: left;
+        /* Align title to the left */
+        font-size: 2rem;
+        /* Increase font size for larger screens */
+    }
+
+    .navigation {
+        display: flex;
+        /* Show navigation for larger screens */
+        flex-direction: row;
+        /* Arrange navigation items horizontally */
+    }
+
+    .mobile-menu {
+        display: none;
+        /* Hide mobile menu on wider screens */
+    }
+
+    .first-section {
+        min-height: 1vh;
+        /* Adjust minimum height */
+    }
+
+    .second-section p {
+        font-size: 3rem;
+        /* Increase font size for second-section text */
+    }
+
+    .image-box {
+        flex-basis: 38%;
+        /* Adjust image box size */
+        margin: 3rem;
+        /* Add spacing around image boxes */
+    }
+}

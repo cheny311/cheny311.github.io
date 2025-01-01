@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Human or Animal</title>
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="human.css" />
+</head>
+<body>
+    <div class="question-container">
+        <h2>If you could be any gender, what would you like to be?</h2>
+        <form class="question-form">
+            <div class="answer-choice">
+                <input type="radio" name="choice" id="choiceA" value="A" onclick="window.location.href='sorry.html';">
+                <label for="choiceA">Male</label>
+            </div>
+            <div class="answer-choice">
+                <input type="radio" name="choice" id="choiceB" value="B" onclick="window.location.href='human1.html';">
+                <label for="choiceB">Female</label>
+            </div>
+            <div class="answer-choice">
+                <input type="radio" name="choice" id="choiceC" value="C" onclick="window.location.href='sorry.html';">
+                <label for="choiceC">Non-binary</label>
+            </div>
+            <div class="answer-choice">
+                <input type="radio" name="choice" id="choiceD" value="D" onclick="window.location.href='sorry.html';">
+                <label for="choiceD">Genderless</label>
+            </div>
+        </form>
+    </div>
+    <div class="star-container"></div>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const starContainer = document.querySelector('.star-container');
+    const colors = ['yellow', 'white']; // alternating colors
+    for (let i = 0; i < 100; i++) {
+        let star = document.createElement('i');
+        star.className = 'blinking-star fa fa-star';
+        star.style.color = colors[i % 2];
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        star.style.left = `${Math.random() * 100}%`; // Random horizontal position
+        starContainer.appendChild(star);
+    }
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+/* refer to cssportal.com*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@import url("reset.css");
+* {
+  box-sizing: border-box;
+}
+html{
+
+}
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+    margin: 0 auto;
+    max-width: 1200px; 
+    min-height: 100vh;
+    font-size: 16px; 
+    background: #ff1919;
+  }
+  
+
+  
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+p {
+  padding: 10px;
+  line-height: 1.6; 
+}
+
+#wrapper {
+
+    background: linear-gradient(to bottom, #ff9191, #c7ff87); 
+}
+
+
+#wrapper-content{
+    padding: 20px;
+}
+#headerwrap {
+   
+  width: 100%;
+  margin: 20px 0;
+    float: left;
+}
+
+#header {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+  background: radial-gradient(circle, #ff93e9, #83ff64);
+  box-shadow: 5px 5px 15px rgba(254, 203, 127, 0.1);
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#contentwrap {
+  clear: both;
+  margin-top: 20px;
+    width: 700px;
+    height: auto;
+    float:none;
+ 
+}
+
+#content {
+    height: auto;
+    background: radial-gradient(at left bottom, rgba(214, 255, 202, 0.75), rgba(255, 0, 195, 0.75)); /* 圆形渐变，从左下角开始 */
+    background-size:auto;
+    box-shadow: 10px 5px 20px #1feb52;
+    margin: 5px;
+    z-index: 6;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#leftcolumnwrap {
+  float: left;
+    width: 30%; /* Smaller sidebar width */
+    margin-right: 2%;
+  }
+  
+  #leftcolumn {
+    /* 设置背景为透明，因为圆圈的背景将是颜色渐变 */
+    background: transparent;
+    height: 400px;
+    margin: 5px;
+    position: relative; /* 添加相对定位以容纳伪元素 */
+  }
+  
+  /* 创建三个圆圈 */
+  #leftcolumn::before,
+  #leftcolumn::after,
+  #leftcircle {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgb(255, 218, 218), rgb(61, 164, 174));
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  #leftcircle {
+    background: radial-gradient(circle, #ff7777, #52cbff);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 11;
+  }
+  #leftcircle:hover  {
+    background-image: url('button.png');
+    transform: scale(1.1);
+    z-index: 10;
+   
+
+  }
+ 
+
+  audio {
+    display: none;
+}
+  .image-button {
+    width: 100px;
+    height: 50px;
+  }
+  #leftcolumn::before {
+  
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgb(255, 255, 0), rgb(255, 185, 168));
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    left: -50%;
+  }
+
+  #leftcolumn::after {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #d618ec, rgb(255, 255, 8));
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(30px, 50px);
+    top: 60%;
+    left: -30%;
+    cursor: pointer; /* Add cursor style for better user experience */
+}
+
+
+
+
+
+
+#text {
+    position: absolute;
+
+    font-weight: 400;
+    color: #000000;
+  }
+  
+  #text:hover {
+    color: #00000056;
+    font-weight: 1000;
+    font-size: 40px;
+
+  }
+
+  #text2 {
+    position: relative;
+    position: center;
+    font-weight: 800;
+    color: #000000;
+  }
+  #text2:hover {
+    color: #f8fff9;
+    font-weight: 1500;
+    font-size: larger;
+   
+   
+
+  
+  }
+  #text2:hover + audio{
+    
+      display: block;
+  }
+#footerwrap {
+  clear: both;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#footer {
+  background: #c3ff00;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+
+.button-container {
+  transform: translate(280px,0px);
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 50px; /* Add space above the button */
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+}
+.button-container {
+  text-align: center; /* Center the button horizontally */
+  margin-top: 20px; /* Add space above the button */
+}
+.button {
+  --b: 2px;           /* Border thickness */
+  --s: 0.5em; 
+  --color:#fc01b1;        /* Padding size */
+  /* --color: #82867f; */
+  /* --color: #88ff00;   Primary line color (green) */
+  --hover-color: #82867f; /* Hover line color (pink) */
+  --active-color: #fc0101; /* Active line color (red) */
+
+  padding: var(--s) calc(var(--s) * 2);
+  color: var(--color); /* Initial text color */
+  border: var(--b) solid var(--color); /* Initial border color */
+  border-radius: 5px; /* Slightly rounded corners */
+  background: none; /* Transparent background */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative; /* Needed for pseudo-elements */
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  position: absolute;
+  height: var(--b); /* Same as border thickness */
+  width: 100%;
+  background: var(--hover-color); /* Hover line color */
+  top: 0;
+  left: -100%; /* Initially off the button */
+  transition: all 0.3s ease-in-out;
+}
+
+.button::after {
+  top: auto; /* Position at the bottom */
+  bottom: 0;
+  left: 100%; /* Initially off the button */
+}
+
+.button:hover::before {
+  left: 0; /* Slide the top line in */
+}
+
+.button:hover::after {
+  left: 0; /* Slide the bottom line in */
+}
+
+.button:hover {
+  color: var(--hover-color); /* Change text color to hover color */
+  border-color: var(--hover-color); /* Change border color to hover color */
+}
+
+.button:active {
+  color: white; /* White text on active */
+  background: var(--active-color); /* Active background color */
+  border-color: var(--active-color); /* Match border to active background */
+}
+
+
+/* 为所有div设置共通样式 */
+.div-grid-item {
+  z-index: 1;          /* 所有图片使用相同的z-index */
+  background-size: 100%; /* 如果所有图片都适用，可以统一设置 */
+  position: absolute;    /* 如果所有div都需要绝对定位 */
+  transition: transform 0.5s ease; /* 添加平滑过渡效果 */
+}
+
+/* 为每个div设置特定的grid位置和transform调整 */
+.div1 { grid-area: 2 / 3 / 2 / 4; transform: translate(-2160px, -2465px);scale:0.5;opacity: 90%;}
+.div2 { grid-area: 4 / 3 / 5 / 4; transform: translate(2px, -2485px);scale: 0.8; }
+.div3 { grid-area: 1 / 1 / 6 / 2; transform: translate(-400px, -900px);scale: 0.5; }
+.div4 { grid-area: 2 / 1 / 3 / 2; transform: translate(900px, -1100px); scale: 0.5; }
+.div5 { grid-area: 2 / 1 / 3 / 2; transform: translate(1080px, -780px);scale: 0.7; }
+
+/* 确保父容器设置了合适的显示方式来支持grid布局 */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  justify-items: start;
+  align-items: start;
+  position: relative; /* 确保父容器是相对定位 */
+}
