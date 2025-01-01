@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Showcase</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../animation/animation.css" />
+    <style>
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .grid-item {
+            width: 100%;
+            object-fit: cover;
+        }
+        .grid-item.rotate90 {
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+    p { 
+    margin: 10px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <a class="button" href="../index.html" style="z-index: 11"
+        >Home Page</a
+      >
+    </div>
+
+    <main>
+        <p>Our project will be creating a microphone for people to use when giving speeches in our game, Peach’s Speech. The microphone will be shaped as a mushroom and will register noise levels which will correspond to timed unity events in the game. We will use multiple analog output audio sensors to get averaged sound data about when the player is speaking into the mushroom. Our controller and game will make the player more thoughtfully engage with the relationship between power and voice, and how different politics can be represented through sound. Different parts of the mushroom might be more or less audio-sensitive so people have to explore the controller to better understand how to make an effective point. This would be mirrored with the game in that the player is using specific ways of speaking and speech to make an effective argument to rouse the audience of Goombas, Koopas, and Cheep Cheeps. Some parts of the microphone may be more or less receptive to each one of those groups, which will represent the different needs and hopes of the various groups within the audience. 
+
+        </p>
+        <p>Mechanic: The text of the speech is always ongoing. The player must speak into the microphone when the screen shows the timing of the words. The player can also switch groups (koopa, goomba, etc) when the text shows on the screen for the corresponding group.
+        </p>
+        <p>
+            Roles
+Tench: Project Manager and Arduino building/code.
+James: 3D Modeling and Printing
+Gabby: Unity Code and Arduino Integration
+Hua: Unity Code and Asset Integration
+Jessie: UX, Asset Creation and sketches
+Jessica: UI and Asset Creation
+
+        </p>
+        <section class="video-container">
+          <div class="grid-container">
+            <div><video controls class="grid-item">
+              <source src="Documentation_01.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p>Documentation</p>
+        </div>
+            <video controls class="grid-item">
+              <source src="Documentation_00.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <img src="IMG_1996.jpg" alt="示例图片" class="grid-item rotate90">
+            <img src="IMG_1997.jpg" alt="示例图片" class="grid-item rotate90">
+            <img src="mic idea 1.jpg" alt="示例图片" class="grid-item">
+            <img src="mic idea 2.jpg" alt="示例图片" class="grid-item">
+            <div><img src="UI Reference.jpg" alt="示例图片" class="grid-item">
+            <p>UI Reference</p>
+            </div>
+            
+            <img src="stages in game.jpg" alt="示例图片" class="grid-item">
+            <img src="teams up idea.jpg" alt="示例图片" class="grid-item">
+            <img src="Start.jpg" alt="示例图片" class="grid-item">
+            <img src="Peach_s Speech - End - Lose.jpg" alt="示例图片" class="grid-item">
+            <img src="Peach_s Speech - End - Win.jpg" alt="示例图片" class="grid-item">
+            <img src="peach.png" alt="示例图片" class="grid-item">
+          </div>
+        </section>
+      </main>
+      
+
+    <footer>
+      <p>© 2024 by Jessie. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

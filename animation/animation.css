@@ -15,7 +15,17 @@ footer {
     text-align: center;
     margin: 20px;
 }
-
+.project-description {
+    height: 150px; /* Fixed height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #222; /* Dark background for description box */
+    border: 1px solid #000000; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    color: #ffffff; /* Light text color */
+    box-shadow: 0 2px 5px rgb(255, 0, 174); /* Optional shadow for better look */
+}
 .button-container {
     position: relative;
     width: 100%;
