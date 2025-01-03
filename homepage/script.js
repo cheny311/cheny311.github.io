@@ -26,7 +26,7 @@ document.querySelectorAll('.rect-container').forEach((container, index) => {
             '../toe2/index.html', // Rectangle 2
             '../toe3/face-filter/index.html', // Rectangle 3
             '../toe4/Nana/nana.html', // Rectangle 4
-            'self/index.html'  // Rectangle 5
+            '../../homepage/self/index.html'  // Rectangle 5
         ];
 
         window.location.href = pages[index];
